@@ -1,0 +1,5 @@
+.header {
+    display: flex;
+    background-color: adjust-hue($color: pink, $degrees: 70);
+    flex-direction: row;
+}

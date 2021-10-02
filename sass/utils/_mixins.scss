@@ -1,0 +1,25 @@
+// 1st section explore mixin
+@mixin explore {
+    display: flex;
+
+}
+
+// mixin landing page restaurants
+@mixin restaurants {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+// mixin restaurant card
+@mixin img-ratio {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+@mixin purpleBtn {
+    padding: 2rem;
+    background-color: $primary-colour;
+}

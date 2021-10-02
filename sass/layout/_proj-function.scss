@@ -1,0 +1,15 @@
+$secondary-colour: #FF79DA;
+$font-weights: ("regular": 400, "medium": 500, "bold": 900);
+
+.proj-function {
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 375px) {
+      display: flex;
+      flex-direction: column;
+  }
+  &__header {
+    font-weight: $map-get($font-weights, "bold");
+    background-color: $secondary-colour;
+  }
+}

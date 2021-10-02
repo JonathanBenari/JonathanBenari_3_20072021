@@ -1,4 +1,18 @@
-html {
-    font-family: 'Roboto', sans-serif;
-    /*font-family: 'Shrikhand', cursive;*/
+/* Error: Undefined variable.
+ *    ,
+ * 12 |     font-weight: $map-get($font-weights, "bold");
+ *    |                  ^^^^^^^^
+ *    '
+ *   sass/layout/_proj-function.scss 12:18  @import
+ *   sass/main.scss 12:9                    root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: Undefined variable.\a    \2577 \a 12 \2502      font-weight: $map-get($font-weights, "bold");\d\a    \2502                   ^^^^^^^^\a    \2575 \a   sass/layout/_proj-function.scss 12:18  @import\a   sass/main.scss 12:9                    root stylesheet';
 }
