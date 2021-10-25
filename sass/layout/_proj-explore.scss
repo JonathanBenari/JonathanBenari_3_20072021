@@ -1,0 +1,27 @@
+.proj-explore {
+    @include flex-column-center;
+    padding: 2rem;
+    background-color: map-get($colours, "background-main");
+    &__title { 
+        @include titles;
+        margin: $margin-titles;
+        text-align: center;
+    }
+    &__par {    
+        font-weight: map-get($font-weights, "regular");
+        color: map-get($colours, "icon-colour");
+        text-align: center;
+        margin: $margin-titles;
+    }
+    &__btn {
+        @include purpleBtn;
+        margin: $margin-titles;
+        @include laptop {
+            width: 25%;
+        }
+        &:hover {
+            @include hover-purplebtn
+    }
+    
+}
+}

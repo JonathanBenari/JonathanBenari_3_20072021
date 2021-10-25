@@ -1,15 +1,61 @@
-$secondary-colour: #FF79DA;
-$font-weights: ("regular": 400, "medium": 500, "bold": 900);
-
 .proj-function {
-  display: flex;
-  flex-direction: row;
-  @media (max-width: 375px) {
-      display: flex;
-      flex-direction: column;
-  }
+  /*display: flex;
+  flex-direction: row; */
   &__header {
-    font-weight: $map-get($font-weights, "bold");
-    background-color: $secondary-colour;
+    @include laptop {
+      margin: $margin-titles-laptop;
+    }
+    @include mobile {
+      margin: $margin-titles-mobile;
   }
+    @include titles;
+  }
+  &__list {
+    @include mobile {
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    @include laptop {
+      @include biggerscreen; // adapting the list in rows with space in between
+      justify-content: space-around;
+      margin: 50px 1rem 50px 1rem;
+    }
+  }
+   &__btn {
+     @include laptop {
+       width: 23%;
+      padding: 10px 15px
+     }  
+    @include btn-menu;
+    border-radius: $radius-func-list-card;
+    
+    &:hover {
+      background-color: map-get($colours, "primary-lighten");
+      box-shadow: $shadow-header;
+    }
+    
+   }
+    &__circle {
+      @include laptop {
+        position: relative;
+        left: -30px;
+        top: 1px;
+      }
+      @include circle;
+    }
+    &__icon {
+      @include laptop {
+        margin-top: 5px;
+        margin-right: 5px;
+      }
+      margin-right: 10px;
+      color: map-get($colours, "icon-colour");
+    }
+    &__title {
+      @include laptop {
+        margin-top: 5px
+      }
+    }
+   
 }

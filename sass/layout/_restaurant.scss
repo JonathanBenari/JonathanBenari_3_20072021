@@ -1,0 +1,99 @@
+// container 
+.restaurant  {
+    @include reset-margin;
+    @include mobile {
+        display: $flex;
+        flex-direction: column;
+    }
+    @include laptop {
+        @include desktop-row-menu;
+    }
+    width: 100%;
+    padding: 2rem;
+    background-color: map-get($colours, "background-main");
+    &__title {
+        @include titles;
+        background-color: map-get($colours, "background-main");
+        @include mobile {
+            padding: $margin-titles-mobile;
+        }
+        @include laptop {
+            padding: $margin-titles-laptop;
+        }
+    }
+.restaurant__panel {
+    position: relative;
+    margin: 1rem;
+    box-shadow: $shadow-btn;
+    border-radius: $radius-func-list-card;
+    overflow: hidden;
+    background-color: map-get($colours,"text-colour-light");
+    transition: 0.4s ease-in-out;
+    @include laptop {
+        width: 90vw;
+    }
+    @include mobile {
+        max-width: unset;
+    }
+    &:hover {
+        transform: translateY(-10px);
+        transition: 0.4s ease-in-out;
+    }
+}
+    &__img {
+        @include mobile {
+            height: 175px;
+        }
+        @include tablet {
+            height: 225px;
+        }
+        @include laptop {
+            height: 300px;
+        }
+        @include img-ratio;
+    }
+    .new {
+        @include new;
+        font-weight: map-get($font-weights, "medium");
+    }  
+}
+
+.restaurant__content {
+    padding: 10px 10px 5px 10px;
+    display: $flex;
+    flex-direction: column;
+        .boldtitle {
+            font-weight: map-get($font-weights, "bold");
+            margin-bottom: 5px;
+            }
+}
+        .restaurant__heart {
+        position: absolute;
+        align-self: flex-end;
+        cursor: pointer;
+            .fa-heart {
+                font-size: 1.4em;
+                background-color: #f3ec78;
+                background-image: linear-gradient(45deg, #f3ec78, #af4261);
+                background-size: 100%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                
+            }
+            .fa-heart:hover {
+                animation: anim-rotate-circle $duration $method $delay both;
+                background: -webkit-linear-gradient(#9356DC, #FF79DA);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                
+                &::before {
+                    transition: all 1s ease-in-out;
+                    -webkit-background-clip: text;
+                    font-weight: 900;
+                    background-image: linear-gradient(#9356DC, #FF79DA);
+                    -webkit-text-fill-color: transparent;            
+                    
+                  }
+                  
+            };
+    }

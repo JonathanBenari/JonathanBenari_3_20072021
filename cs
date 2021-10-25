@@ -1,3 +1,4 @@
+@charset "UTF-8";
 h1 {
   font-family: "Shrikhand", Helvetica sans-serif;
 }
@@ -6,26 +7,6 @@ body {
   font-family: "Roboto", Helvetica, sans-serif;
 }
 
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: loader 4s cubic-bezier(0.85, -0.19, 0.65, 1.4) forwards;
-  position: fixed;
-  z-index: 10000;
-  width: 100%;
-  height: 100%;
-  background: #e4d5f6;
-  flex-direction: column;
-}
-.loading .loading::after {
-  content: "helloooooo";
-  position: relative;
-  z-index: -3;
-  width: 0%;
-  height: 0%;
-  opacity: 0;
-}
 .loading__bar {
   display: flex;
   justify-content: center;
@@ -35,7 +16,7 @@ body {
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  border-top-color: #FF79DA;
+  border-top-color: lightcoral;
   border-bottom-color: rebeccapurple;
   animation: spinner 3s cubic-bezier(0.85, -0.19, 0.39, 1.14) 0.1ms alternate both running;
 }
@@ -48,25 +29,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/*
-&__bar::after {
-    content: "";
-    position: relative; 
-    opacity: 0;
-    z-index: -3;
-}
-&__title::after {
-    content: "";
-    position: relative; 
-    opacity: 0;
-    z-index: -3;
-}
-.loading::after {
-    content: "";
-    position: relative; 
-    opacity: 0;
-    z-index: -3;
-} */
 .menuItem {
   padding: 1rem;
   margin: 10px 1rem 2rem 1rem;
@@ -74,13 +36,14 @@ body {
   display: flex;
   background-color: #f4f4f4;
   box-shadow: 0px 5px 10px 0px rgba(194, 194, 194, 0.78);
-  display: flex;
   justify-content: space-between;
   animation: anim-menu 1.1s ease-in-out;
   background-color: #fafafa;
   border-radius: 15px;
+  margin: 0;
+  margin-bottom: 1rem;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 1rem 10px 1rem;
 }
 .menuItem--1 {
   animation-delay: 80ms;
@@ -110,63 +73,82 @@ body {
   animation-delay: 720ms;
 }
 .menuItem__dishname {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-  flex-direction: column;
   font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 5px;
 }
 .menuItem__dishname p {
-  font-weight: 400;
+  font-weight: normal;
+  text-overflow: ellipsis;
 }
 .menuItem__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 700;
-  margin-right: 1rem;
 }
 .menuItem__checkcircle {
+  border-radius: 0 15px 15px 0;
+  position: relative;
+  overflow: hidden;
+  width: 0px;
+  height: 70px;
+  background-color: #fafafa;
+}
+.menuItem:hover .menuItem__checkcircle > .menuItem__icon {
+  right: 0;
+  transition: 0.6s ease-in-out;
+}
+.menuItem__icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: -100px;
+  width: 100px;
+  height: 70px;
   background-color: #99E2D0;
-  border-radius: 0 15px 15px 0;
-  overflow: hidden;
-  margin: -1rem -5rem -1rem 1rem;
-  transition: 0.6s ease-in-out;
-  cursor: pointer;
-  flex-wrap: wrap;
-  max-width: 0px;
-  width: 100%;
-  margin-right: -1rem;
-  margin-left: auto;
-}
-.menuItem:hover .menuItem__checkcircle {
-  transition: 0.6s ease-in-out;
-  background-color: #99E2D0;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  margin-right: -1rem;
-}
-@media screen and (min-width: 375px) {
-  .menuItem:hover .menuItem__checkcircle {
-    min-height: 80px;
-    max-width: 70px;
-  }
-}
-.menuItem .fa-check-circle {
   color: #ffff;
   font-size: 1.4rem;
+  transition: 0.5s ease-in-out;
 }
 .menuItem:hover .fa-check-circle {
-  transform: rotate(360deg) scale(1);
-  transition: 1.4s;
+  transform: rotate(360deg);
+  transition: 1s;
 }
 
+/*
+
+&:hover > &__checkcircle {
+        right: 0;
+        transition: 1s ease-in-out;  
+    }
+
+&:hover {
+    & > .menu__checkcircle {
+        @include flex-center;
+        width: 0%;
+        position: relative;
+        overflow: hidden;
+        padding: 1rem;
+        border-radius: $radius-check-bloc;
+        background-color: map-get($colours, "accent-colour");
+        animation: anim-slidex $duration $method $delay both;
+        & > .fa-check-circle {
+                position: absolute;
+                background-color: map-get($colours, "accent-colour");
+                color: #ffff;
+                font-size: 1.4rem;    
+                animation: anim-rotate-circle $duration $method $delay both;
+                .fa-check-circle::before {
+                    content: "";
+                    display: none;
+                }
+        }   
+    }
+}
+
+*/
 @keyframes anim-rotate-circle {
   0% {
     transform: rotate(0deg) scale(1);
@@ -201,7 +183,7 @@ body {
 }
 @keyframes loader {
   0% {
-    opacity: 1;
+    transform: opacity 1;
   }
   100% {
     opacity: 0;
@@ -245,33 +227,8 @@ body {
   padding: 1rem;
 }
 .header__title {
-  font-size: 2.5em;
+  font-size: 2em;
   text-shadow: 0 0 black;
-}
-
-.menu__icon {
-  cursor: pointer;
-}
-.menu__icon .fa-heart {
-  font-size: 1.4em;
-  background-color: #f3ec78;
-  background-image: linear-gradient(45deg, #f3ec78, #af4261);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.menu__icon .fa-heart:hover {
-  animation: anim-rotate-circle 0.7s ease-in-out 0.3ms both;
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.menu__icon .fa-heart:hover::before {
-  transition: all 1s ease-in-out;
-  -webkit-background-clip: text;
-  font-weight: 900;
-  background-image: linear-gradient(#9356DC, #FF79DA);
-  -webkit-text-fill-color: transparent;
 }
 
 .form-location {
@@ -293,7 +250,6 @@ body {
   font-weight: 500;
   background-color: inherit;
   border: none;
-  color: #939393;
 }
 
 .proj-explore {
@@ -308,14 +264,9 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.5em;
   font-weight: 800;
-  margin: 1.3rem;
-  text-align: center;
 }
 .proj-explore__par {
   font-weight: 400;
-  color: #939393;
-  text-align: center;
-  margin: 1.3rem;
 }
 .proj-explore__btn {
   padding: 1rem;
@@ -325,12 +276,6 @@ body {
   border: none;
   border-radius: 50px;
   box-shadow: 0px 5px 10px 0px rgba(194, 194, 194, 0.78);
-  margin: 1.3rem;
-}
-@media screen and (min-width: 1024px) {
-  .proj-explore__btn {
-    width: 25%;
-  }
 }
 .proj-explore__btn:hover {
   box-shadow: 0px -1px 1px 0px rgba(194, 194, 194, 0.78);
@@ -346,16 +291,6 @@ body {
   font-size: 1.5em;
   font-weight: 800;
 }
-@media screen and (min-width: 1024px) {
-  .proj-function__header {
-    margin: 40px 75px;
-  }
-}
-@media screen and (min-width: 375px) {
-  .proj-function__header {
-    margin: 30px 30px;
-  }
-}
 @media screen and (min-width: 375px) {
   .proj-function__list {
     flex-direction: column;
@@ -368,8 +303,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    justify-content: space-around;
-    margin: 50px 1rem 50px 1rem;
   }
 }
 .proj-function__btn {
@@ -451,16 +384,6 @@ body {
   font-weight: 800;
   background-color: #f4f4f4;
 }
-@media screen and (min-width: 375px) {
-  .restaurant__title {
-    padding: 30px 30px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .restaurant__title {
-    padding: 40px 75px;
-  }
-}
 .restaurant .restaurant__panel {
   position: relative;
   margin: 1rem;
@@ -468,37 +391,27 @@ body {
   border-radius: 15px;
   overflow: hidden;
   background-color: #f5f5f5;
-  transition: 0.4s ease-in-out;
-}
-@media screen and (min-width: 1024px) {
-  .restaurant .restaurant__panel {
-    width: 90vw;
-  }
 }
 @media screen and (min-width: 375px) {
   .restaurant .restaurant__panel {
+    width: 90vw;
     max-width: unset;
   }
 }
 .restaurant .restaurant__panel:hover {
-  transform: translateY(-10px);
-  transition: 0.4s ease-in-out;
+  transform: translateY(10px);
+  transition: all 0.4s ease-in-out;
 }
 .restaurant__img {
   display: block;
   width: 100%;
   object-fit: cover;
   overflow: hidden;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 20px 20px 0px 0px;
 }
 @media screen and (min-width: 375px) {
   .restaurant__img {
     height: 175px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .restaurant__img {
-    height: 225px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -531,7 +444,6 @@ body {
 .restaurant__heart {
   position: absolute;
   align-self: flex-end;
-  cursor: pointer;
 }
 .restaurant__heart .fa-heart {
   font-size: 1.4em;
@@ -556,10 +468,10 @@ body {
 }
 
 .footer {
-  background-color: #353535;
+  background-color: #1a1919;
   padding: 1rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .footer {
     display: flex;
     flex-direction: column;
@@ -575,12 +487,7 @@ body {
 }
 .footer__title {
   color: #f5f5f5;
-  font-size: 1.3em;
-}
-@media screen and (min-width: 580px) {
-  .footer__title {
-    font-size: 1.5em;
-  }
+  font-size: 1.4em;
 }
 .footer__content {
   color: #f5f5f5;
@@ -603,14 +510,12 @@ body {
   margin-top: 1rem;
 }
 
+/* Apparition des btn avec opacity et arrivée des btn avec translateY() -10000px
+
+/* transition rotation de 360° du checkcircle rotate(360) et div parente translate(x,y), balise P rogné avec text overflow ellipsis au click*/
 @media screen and (min-width: 375px) {
   .restaurant-header {
-    font-size: 1em;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .restaurant-header {
-    font-size: 1.2em;
+    color: rebeccapurple;
   }
 }
 .restaurant-header__logo {
@@ -626,7 +531,7 @@ body {
   width: 100%;
   object-fit: cover;
   overflow: hidden;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 20px 20px 0px 0px;
   border-radius: 0;
   height: 300px;
   position: relative;
@@ -635,7 +540,7 @@ body {
   z-index: -1;
 }
 .restaurant-header__title {
-  font-size: 2.5em;
+  font-size: 2em;
   text-shadow: 0 0 black;
   display: flex;
   justify-content: center;
@@ -657,30 +562,18 @@ body {
   margin-bottom: 2rem;
 }
 .container .menu .menu-header__title {
-  font-family: "Shrikhand", Helvetica sans-serif;
-  font-size: 2.5em;
+  font-size: 2em;
   text-shadow: 0 0 black;
-}
-@media screen and (min-width: 375px) {
-  .container .menu .menu-header__title {
-    font-size: 2em;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .container .menu .menu-header__title {
-    font-size: 2.3em;
-  }
 }
 .container .menu .far {
   font-size: 1.4em;
 }
-@media screen and (min-width: 1250px) {
+@media screen and (min-width: 1024px) {
   .container .menu .btns-container {
     animation: anim-menu-desktop 1.1s ease-in-out;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 3rem 0px 2rem 0px;
   }
 }
 .container .menu__name {
@@ -712,4 +605,4 @@ body {
   opacity: 0.93;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=cs.map */

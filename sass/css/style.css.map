@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../base/_typography.scss","../components/_buttons.scss","../pages/_restaurantpage.scss"],"names":[],"mappings":"AAAA;EACI;;;AAEJ;EACI;;;ACJJ;EACI;;;ACAJ;EACI","file":"style.css"}
+{"version":3,"sourceRoot":"","sources":["../layout/_header.scss","../layout/_form-location.scss","../layout/_proj-function.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;;;ACHJ;EACI;;;ACDJ;EACE;EACA;;AACA;EAHF;IAIM;IACA;;;AAEJ;EACE;EACA","file":"style.css"}

@@ -1,14 +1,111 @@
-// 1st section explore mixin
-@mixin explore {
-    display: flex;
+@mixin mobile {
+    @media screen and (min-width: map-get($breakpoints, "small-mobile")) {
+        @content
+    }
+};
+@mixin large-mobile {
+    @media screen and (min-width: map-get($breakpoints, "large-mobile")) {
+        @content
+    }
+};
+@mixin tablet {
+    @media screen and (min-width: map-get($breakpoints, "tablet")) {
+        @content
+    }
+};
+@mixin laptop {
+    @media screen and (min-width: map-get($breakpoints, "small-laptop")) {
+        @content
+    }
+};
+@mixin desktop {
+    @media screen and (min-width: map-get($breakpoints, "desktop")) {
+        @content
+    }
+};
 
+@mixin logo {
+    font-size: 2.5em;
+    text-shadow: 0 0 black;
+};
+
+@mixin titles {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    font-weight: 800;
+};
+@mixin space-between {
+    display: $flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
 }
 
-// mixin landing page restaurants
-@mixin restaurants {
-    display: flex;
+@mixin flex-center {
+    display: $flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-column-center {
+    display: $flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
+}
+
+@mixin footer-item-column {
+    display: $flex;
+    flex-direction: column;
+}
+@mixin biggerscreen {
+    display: $flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin desktop-row-menu {
+    display: $flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+@mixin reset-margin {
+    margin: 0;
+    padding: 0;
+    margin: auto;
+}
+
+@mixin btn-menu {
+    padding: 1rem;
+    margin: 10px 1rem 2rem 1rem;
+    cursor: pointer;
+    display: $flex;
+    background-color:map-get($colours, "background-main");
+    box-shadow: $shadow-btn;
+}
+
+@mixin purpleBtn  {
+    padding: 1rem;
+    background: linear-gradient(to top, map-get($colours, "gradient"));
+    color: map-get($colours,"text-colour-light");
+    font-weight: map-get($font-weights, "semi-bold" );
+    border: none;
+    border-radius: $radius-btn;
+    box-shadow: $shadow-btn;   
+}
+@mixin hover-purplebtn {
+    box-shadow: $shadow-header;
+    opacity: 0.93; 
+}
+
+// mixin cercle
+@mixin circle {
+    position: absolute;
+    background-color: map-get($colours, "primary-colour");
+    color: map-get($colours, "text-colour-light");
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    padding: 5px;
+    left: 0;
 }
 
 // mixin restaurant card
@@ -17,9 +114,41 @@
     width: 100%;
     object-fit: cover;
     overflow: hidden;
+    border-radius: $radius-card-img;
 }
 
-@mixin purpleBtn {
-    padding: 2rem;
-    background-color: $primary-colour;
+@mixin new {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    padding: 10px;
+    border-radius: $new-restaurant;
+    background: map-get($colours, "accent-colour");
+    color: map-get($colours, "accent-darken");
+}
+
+@mixin img-zindex {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+@mixin title-green-underline {
+    text-transform: uppercase;
+    border-bottom: 3px solid map-get($colours, "accent-colour");
+    padding-bottom: 5px;
+    width: 40px;
+    margin-bottom: 1rem;
+}
+@mixin titles-menu {
+    font-size: 1.1em;
+    font-weight: map-get($font-weights, "semi-bold");
+    margin-bottom: 5px;
+}
+
+@mixin gradient-title {
+    background: -webkit-linear-gradient(#9356DC, #FF79DA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

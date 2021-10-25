@@ -1,6 +1,55 @@
-$primary-colour: #9356DC;
-$secondary-colour: #FF79DA;
-$accent-colour: #99E2D0;
-$background-colour: #f9f9f9;
-$radius: 7px;
-$shadow: 0px 8px 9px -1px rgba(220,220,220,0.58);
+$colours: (
+    "primary-colour": #9356DC,
+    "primary-lighten": (lighten(#9356DC, 30%)),
+    "secondary-colour": #FF79DA,
+    "accent-colour": #99E2D0,
+    "accent-darken": (darken(#99E2D0, 40%)),
+    "background-main": #f4f4f4,
+    "background-footer":#353535,
+    "text-colour-light": #f5f5f5,
+    "icon-colour": (darken(#f4f4f4, 38%)),
+    "gradient": (#9356DC, #FF79DA),
+    "darken-white": (darken(#ffff, 2%))    
+);
+
+
+$breakpoints: (
+    "small-mobile": 375px,
+    "large-mobile": 580px,
+    "tablet": 768px,
+    "small-laptop": 1024px,
+    "desktop": 1250px
+
+);
+
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "semi-bold": 600,
+    "bold": 700,
+    "bolder": 900
+);
+// border radius
+$radius-btn: 50px;
+$radius-func-list-card: 15px;
+$radius-card-img: 15px 15px 0px 0px;
+$radius-bloc-menu: 40px 40px 0 0;
+$radius-check-bloc:  0 15px 15px 0;
+$new-restaurant: 2px;
+// box-shadow
+$shadow-header: 0px -1px 1px 0px rgba(194,194,194,0.78);
+$shadow-btn: 0px 5px 10px 0px rgb(194 194 194 / 78%);
+// other
+$width: 100%;
+$flex: flex;
+$margin-footer: 1rem;
+$margin-titles: 1.3rem;
+$margin-titles-mobile: 30px 30px;
+$margin-titles-laptop: 40px 75px;
+// animation
+$animation: animation;
+$duration: 0.7s;
+$method: ease-in-out;
+$delay: 0.3ms;
+// loader
+$size: 3vh;

@@ -1,17 +1,26 @@
-h1 {
-  color: orange;
+.header {
+  display: flex;
+  background-color: #ffb479;
+  flex-direction: row;
 }
 
-h2 {
-  color: orange;
+.form-location {
+  background-color: #e0e0e0;
 }
 
-button {
-  color: orange;
+.proj-function {
+  display: flex;
+  flex-direction: row;
 }
-
-.restaurant-header {
-  background-color: orange;
+@media (max-width: 375px) {
+  .proj-function {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.proj-function__header {
+  font-weight: 900;
+  background-color: #FF79DA;
 }
 
 /*# sourceMappingURL=style.css.map */

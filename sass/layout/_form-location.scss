@@ -1,3 +1,19 @@
 .form-location {
-    background-color: set-background-darken($background-colour);
+    @include flex-center;
+    background-color: darken-background(map-get($colours, "background-main"));
+    box-shadow: $shadow-header;
+    text-align: center;
+    padding: 10px;
+    &__icon {
+        margin-right: 1rem;
+    }
+    .field {
+        text-align: center;
+    }
+    input {
+        font-weight: map-get($font-weights, "medium");
+        background-color: inherit;
+        border: none;
+        color: map-get($colours, "icon-colour");
+        }
 }

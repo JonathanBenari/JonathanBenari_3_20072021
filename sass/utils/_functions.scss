@@ -1,5 +1,6 @@
-@function set-background-darken ($colour) {
-    @if (lightness($colour) > 40%) {
-        @return (darken($colour, 10%))
-    }
-}
+@function darken-background ($colours) {
+        @if (lightness($colours) > 40%) {
+
+        @return (darken($colours, 5%));
+        }
+};

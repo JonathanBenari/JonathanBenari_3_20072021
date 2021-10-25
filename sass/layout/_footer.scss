@@ -1,0 +1,39 @@
+.footer {
+    @include tablet {
+        @include flex-column-center;
+        padding: 50px;
+        }
+    background-color: map-get($colours, "background-footer");
+    padding: 1rem;
+    &__logo {
+        color: map-get($colours, "text-colour-light");
+        font-family: 'Shrikhand', sans-serif;
+        margin-bottom: 1rem;
+    }
+        &__title {  
+            @include large-mobile {
+                font-size: 1.5em;
+            }
+           color: map-get($colours, text-colour-light);
+           font-size: 1.3em;
+        }
+    &__content {
+        color: map-get($colours, text-colour-light);
+        font-size: 1.1em;
+    }
+        &__icon {
+            margin-top: $margin-footer;
+            .fas {
+                font-size: 1.3em;
+            }
+        }
+        &__par {
+            margin-top: $margin-footer;
+        }
+    &__item {
+        @include footer-item-column;
+    }
+    &__link {
+        margin-top: $margin-footer;
+    }
+}
