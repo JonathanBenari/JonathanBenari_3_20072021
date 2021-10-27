@@ -2,12 +2,12 @@
 .restaurant  {
     @include reset-margin;
     @include mobile {
-        // animation: anim-menu 1.1s ease-out;
+        // animation: anim-menu 1.1s 3s ease-out;
         display: $flex;
         flex-direction: column;
     }
     @include laptop {
-        // animation: anim-slidex 1.2s ease-in-out;
+        // animation: anim-slidex 1.2s 3s ease-in-out;
         @include desktop-row-menu;
     }
     width: 100%;

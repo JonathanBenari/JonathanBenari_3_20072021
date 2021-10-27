@@ -10,15 +10,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: loader 4s cubic-bezier(0.85, -0.19, 0.65, 1.4) both;
+  animation: loader 3.4s cubic-bezier(0.85, -0.19, 0.65, 1.4) both;
   position: absolute;
-  top: 0;
-  left: 0;
   opacity: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   background: #e4d5f6;
   flex-direction: column;
+}
+@media screen and (min-width: 375px) {
+  .loading {
+    height: 2158px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .loading {
+    height: 1517px;
+  }
 }
 .loading__bar {
   display: flex;
@@ -34,7 +41,7 @@ body {
   animation: spinner 3s cubic-bezier(0.85, -0.19, 0.39, 1.14) 0.1ms alternate both running;
 }
 .loading__title {
-  animation: logo-skew 1.7s 2s ease-in-out both;
+  animation: logo-skew 1.5s 1.3s ease-in-out both;
   font-family: "Shrikhand", Helvetica sans-serif;
   font-size: 3em;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
@@ -109,6 +116,7 @@ body {
 .menuItem__price {
   font-weight: 700;
   margin-right: 5px;
+  margin-top: 23px;
 }
 .menuItem__checkcircle {
   display: flex;
@@ -169,9 +177,11 @@ body {
 @keyframes anim-slidex {
   0% {
     transform: translateX(-1000px) scale(0.1);
+    opacity: 0;
   }
   100% {
     transform: translateX(0px) scale(1);
+    opacity: 1;
   }
 }
 @keyframes anim-menu {
@@ -201,9 +211,15 @@ body {
 @keyframes loader {
   0% {
     opacity: 1;
+    z-index: 9999;
+  }
+  70% {
+    opacity: 0.7;
+    z-index: 9999;
   }
   100% {
     opacity: 0;
+    z-index: -9999;
   }
 }
 @keyframes spinner {
@@ -225,10 +241,14 @@ body {
     transform: skewX(0.5turn) scale(1);
   }
   70% {
-    transform: skewX(1turn) scale(1.2);
+    transform: skewX(1turn) scale(1.4);
+    opacity: 0.3;
+    z-index: -9999;
   }
   100% {
-    transform: skewX(1turn) scale(1);
+    transform: skewX(0.2turn) scale(0.2);
+    opacity: 0;
+    z-index: -9999;
   }
 }
 .header__logo {
