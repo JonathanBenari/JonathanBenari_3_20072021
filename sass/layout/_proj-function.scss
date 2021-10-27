@@ -24,8 +24,7 @@
   }
    &__btn {
      @include laptop {
-       width: 23%;
-      padding: 10px 15px
+       width: 300px;
      }  
     @include btn-menu;
     border-radius: $radius-func-list-card;
@@ -51,11 +50,14 @@
       }
       margin-right: 10px;
       color: map-get($colours, "icon-colour");
+      &:hover {
+        color: map-get($colours, "primary-colour");
+        }
     }
-    &__title {
-      @include laptop {
-        margin-top: 5px
-      }
-    }
-   
+}
+.proj-function__title {
+  @include laptop {
+    margin-top: 5px;
+    margin-left: 1rem;
+  }
 }

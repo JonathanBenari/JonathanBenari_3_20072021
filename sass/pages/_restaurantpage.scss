@@ -34,7 +34,7 @@
 
     .menu {
         // background menu
-        animation: anim-menu 1s ease-in-out  ;
+        animation: anim-menu 1s ease-in-out;
         background-color: map-get($colours, "background-main");
         border-radius: $radius-bloc-menu;
         margin-top: -40px;

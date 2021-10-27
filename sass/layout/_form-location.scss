@@ -2,10 +2,9 @@
     @include flex-center;
     background-color: darken-background(map-get($colours, "background-main"));
     box-shadow: $shadow-header;
-    text-align: center;
-    padding: 10px;
+    padding: 1rem;
     &__icon {
-        margin-right: 1rem;
+        margin-right: 10px;
     }
     .field {
         text-align: center;
@@ -14,6 +13,8 @@
         font-weight: map-get($font-weights, "medium");
         background-color: inherit;
         border: none;
-        color: map-get($colours, "icon-colour");
+        font-size: 1.2em;
+        text-align: center;
+        width: 150px;
         }
 }
