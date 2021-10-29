@@ -44,15 +44,15 @@
       @include circle;
     }
     &__icon {
+      &:hover {
+        color: map-get($colours, "primary-colour");
+        }
       @include laptop {
         margin-top: 5px;
         margin-right: 5px;
       }
       margin-right: 10px;
       color: map-get($colours, "icon-colour");
-      &:hover {
-        color: map-get($colours, "primary-colour");
-        }
     }
 }
 .proj-function__title {

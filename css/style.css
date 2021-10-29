@@ -274,25 +274,22 @@ body {
 .menu__icon {
   cursor: pointer;
 }
-.menu__icon .fa-heart {
-  font-size: 1.4em;
-  background-color: #f3ec78;
-  background-image: linear-gradient(45deg, #f3ec78, #af4261);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .menu__icon .fa-heart:hover {
-  animation: anim-rotate-circle 0.7s ease-in-out 0.3ms both;
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  animation: anim-rotate-circle 0.7s ease-in-out 0.3s both;
 }
 .menu__icon .fa-heart:hover::before {
   transition: all 1s ease-in-out;
   -webkit-background-clip: text;
   font-weight: 900;
   background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-text-fill-color: transparent;
+}
+.menu__icon .fa-heart {
+  font-size: 1.4em;
+  background-color: #f3ec78;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-size: 100%;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -434,14 +431,14 @@ body {
   margin-right: 10px;
   color: #939393;
 }
+.proj-function__icon:hover {
+  color: #9356DC;
+}
 @media screen and (min-width: 1024px) {
   .proj-function__icon {
     margin-top: 5px;
     margin-right: 5px;
   }
-}
-.proj-function__icon:hover {
-  color: #9356DC;
 }
 
 @media screen and (min-width: 1024px) {
@@ -560,25 +557,21 @@ body {
   align-self: flex-end;
   cursor: pointer;
 }
+.restaurant__heart .fa-heart:hover {
+  animation: anim-rotate-circle 0.7s ease-in-out both;
+}
+.restaurant__heart .fa-heart:hover::before {
+  font-weight: 900;
+  transition: all 1s ease-in-out;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-text-fill-color: transparent;
+}
 .restaurant__heart .fa-heart {
   font-size: 1.4em;
-  background-color: #f3ec78;
   background-image: linear-gradient(45deg, #f3ec78, #af4261);
   background-size: 100%;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.restaurant__heart .fa-heart:hover {
-  animation: anim-rotate-circle 0.7s ease-in-out 0.3ms both;
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.restaurant__heart .fa-heart:hover::before {
-  transition: all 1s ease-in-out;
-  -webkit-background-clip: text;
-  font-weight: 900;
-  background-image: linear-gradient(#9356DC, #FF79DA);
   -webkit-text-fill-color: transparent;
 }
 

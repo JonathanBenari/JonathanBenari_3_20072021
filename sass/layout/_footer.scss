@@ -14,11 +14,11 @@
             @include large-mobile {
                 font-size: 1.5em;
             }
-           color: map-get($colours, text-colour-light);
+           color: map-get($colours, "text-colour-light");
            font-size: 1.3em;
         }
     &__content {
-        color: map-get($colours, text-colour-light);
+        color: map-get($colours, "text-colour-light");
         font-size: 1.1em;
     }
         &__icon {
