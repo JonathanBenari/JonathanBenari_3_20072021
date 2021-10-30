@@ -55,9 +55,12 @@
                 }
             }
         }
-            .far {
-                font-size: 1.4em;
-            }
+            // .far {
+            //     font-size: 1.4em;
+            // }
+            .fa-heart:hover {
+            animation: anim-rotate-circle 0.7s ease-in-out both;    
+        };
         // container des 3 entrees plats et desserts + titre   
         .btns-container {
             @include desktop {
