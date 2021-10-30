@@ -65,31 +65,31 @@ body {
   padding: 12px;
 }
 .menuItem--1 {
-  animation-delay: 80ms;
+  animation-delay: 100ms;
 }
 .menuItem--2 {
-  animation-delay: 160ms;
+  animation-delay: 200ms;
 }
 .menuItem--3 {
-  animation-delay: 240ms;
+  animation-delay: 300ms;
 }
 .menuItem--4 {
-  animation-delay: 320ms;
-}
-.menuItem--5 {
   animation-delay: 400ms;
 }
+.menuItem--5 {
+  animation-delay: 500ms;
+}
 .menuItem--6 {
-  animation-delay: 480ms;
+  animation-delay: 600ms;
 }
 .menuItem--7 {
-  animation-delay: 560ms;
+  animation-delay: 700ms;
 }
 .menuItem--8 {
-  animation-delay: 640ms;
+  animation-delay: 800ms;
 }
 .menuItem--9 {
-  animation-delay: 720ms;
+  animation-delay: 900ms;
 }
 .menuItem__dishname {
   display: block;
@@ -125,7 +125,7 @@ body {
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
   overflow: hidden;
-  margin: -12px -5rem -12px -12px;
+  margin: -12px 0px -12px 0px;
   transition: 0.6s ease-in-out;
   cursor: pointer;
   flex-wrap: wrap;
@@ -279,14 +279,13 @@ body {
 }
 .menu__icon .fa-heart:hover::before {
   transition: all 1s ease-in-out;
-  -webkit-background-clip: text;
   font-weight: 900;
   background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .menu__icon .fa-heart {
   font-size: 1.4em;
-  background-color: #f3ec78;
   background-image: linear-gradient(45deg, #f3ec78, #af4261);
   background-size: 100%;
   -webkit-background-clip: text;

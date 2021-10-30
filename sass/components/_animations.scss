@@ -36,7 +36,7 @@
 .menuItem {
     @for $i from 1 through 9 {
         &--#{$i} {
-            animation-delay: 80ms * $i;
+            animation-delay: 110ms * $i;
         }
     }
     @include btn-menu;
@@ -76,7 +76,7 @@
         background-color: map-get($colours, "accent-colour");
         border-radius: $radius-check-bloc;
         overflow: hidden;
-        margin: -12px -5rem -12px -12px;
+        margin: -12px 0px -12px 0px;
         transition: 0.6s ease-in-out;
         cursor: pointer;
         flex-wrap: wrap;

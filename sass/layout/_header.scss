@@ -13,15 +13,15 @@
         animation: anim-rotate-circle 0.7s ease-in-out 0.3s both;
         &::before {
             transition: all 1s ease-in-out;
-            -webkit-background-clip: text;
             font-weight: 900;
             background-image: linear-gradient(#9356DC, #FF79DA);
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;            
           }    
     };
     .fa-heart {
         font-size: 1.4em;
-        background-color: #f3ec78;
+        // background-color: #f3ec78;
         background-image: linear-gradient(45deg, #f3ec78, #af4261);
         background-size: 100%;
         -webkit-background-clip: text;
